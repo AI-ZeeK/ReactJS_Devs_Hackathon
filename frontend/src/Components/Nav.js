@@ -24,7 +24,7 @@ function Nav(props) {
         <div className="asideMenuCard">
           <button
             onClick={() => {
-              setAside(!aside);
+              setAside((prev) => !prev);
             }}
             className={`asideCancelBtn`}
           >

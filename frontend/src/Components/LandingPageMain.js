@@ -13,7 +13,7 @@ function LandingPageMain(props) {
         </h1>
 
         <p className="text-tetiary">
-          Discover the best Doctors, clinics & hospitals nearest to you.
+          Discover the best Doctors, clinics & Hospitals nearest to you.
         </p>
         <div>
           <button className="ctaLeftBtn btn">Book an appointment</button>

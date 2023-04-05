@@ -48,8 +48,8 @@ function LandingPageMain(props) {
               <div className="ctaImages">
                 <a href="#">
                   <Image
-                    width="70"
-                    height="90"
+                    width={70}
+                    height={90}
                     src={items.path}
                     alt="illustration"
                   ></Image>

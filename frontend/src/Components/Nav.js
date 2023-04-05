@@ -68,8 +68,8 @@ function Nav(props) {
           <a>
             <picture className="navLogo">
               <Image
-                width="40"
-                height="40"
+                width={40}
+                height={40}
                 src="/images/dummyLogo.svg"
                 alt="menu"
               ></Image>

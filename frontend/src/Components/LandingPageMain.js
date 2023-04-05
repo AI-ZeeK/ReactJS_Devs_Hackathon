@@ -27,8 +27,8 @@ function LandingPageMain(props) {
                 <div>
                   <a href="#" className="iconContainer">
                     <Image
-                      width="25"
-                      height="25"
+                      width={25}
+                      height={25}
                       src={items.path}
                       alt={items.name}
                     ></Image>

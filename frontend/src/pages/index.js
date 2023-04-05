@@ -17,10 +17,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* Was not really sure where to place my (jeffery's) code so i just put it here!, it containes the header and the landing page component */}
-      <Nav />
-      <div className="landingbody">
-        <LandingPageMain />
-      </div>
+      <main>
+        {" "}
+        <Nav />
+        <div className="landingbody">
+          <LandingPageMain />
+        </div>
+      </main>
     </>
   );
 }

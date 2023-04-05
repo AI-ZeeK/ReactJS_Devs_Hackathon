@@ -29,8 +29,8 @@ function Nav(props) {
             className={`asideCancelBtn`}
           >
             <Image
-              width="40"
-              height="40"
+              width={40}
+              height={40}
               src="/images/close.svg"
               alt="cancel"
             ></Image>
@@ -54,13 +54,13 @@ function Nav(props) {
         <div>
           <button
             onClick={() => {
-              setAside(!aside);
+              setAside((prev) => !prev);
             }}
             className="navHamburger"
           >
             <Image
-              width="30"
-              height="30"
+              width={30}
+              height={30}
               src="/images/hamburger.svg"
               alt="Logo"
             ></Image>

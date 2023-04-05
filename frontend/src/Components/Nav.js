@@ -40,7 +40,7 @@ function Nav(props) {
             {navItemsArray.map((items, index) => {
               return (
                 <div key={index} className="asideNavItems">
-                  <a>
+                  <a href="#">
                     <button>{items.name}</button>
                   </a>
                 </div>
@@ -65,7 +65,7 @@ function Nav(props) {
               alt="Logo"
             ></Image>
           </button>
-          <a>
+          <a href="#">
             <picture className="navLogo">
               <Image
                 width={40}
@@ -79,7 +79,11 @@ function Nav(props) {
         {/* Navigation */}
         <div className="headerNav">
           {navItemsArray.map((items, index) => {
-            return <a key={index}>{items.name}</a>;
+            return (
+              <a href="#" key={index}>
+                {items.name}
+              </a>
+            );
           })}
         </div>
         <form

@@ -16,7 +16,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <LandingPageMain />
+      {/* Was not really sure where to place my (jeffery's) code so i just put it here!, it containes the header and the landing page component */}
+      <Nav />
+      <div className="landingbody">
+        <LandingPageMain />
+      </div>
     </>
   );
 }

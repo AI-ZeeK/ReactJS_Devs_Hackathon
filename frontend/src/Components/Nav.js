@@ -1,42 +1,102 @@
 import React from "react";
 import Image from "next/image";
 import { useState } from "react";
+import { navItemsArray } from "@/Utils/Utils";
 
 function Nav(props) {
+  // State control for input feild
   const [searchInput, setSearchInput] = useState("");
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
+  const [aside, setAside] = useState(true);
+  const handleSearchInputSubmit = (event) => {
+    event.preventDefault();
     setSearchInput("");
-    console.log(searchInput);
   };
 
+  // state control for form submission
+  const handleSearchInputChange = (event) => {
+    setSearchInput(event.target.value);
+    console.log(searchInput);
+  };
   return (
     <header>
-      <nav className="navbar">
+      {/* Aside menu for smaller devices */}
+      <aside className={`asideMenu ${aside ? "asideHide" : "asideShow"}`}>
+        <div className="asideMenuCard">
+          <button
+            onClick={() => {
+              setAside(!aside);
+            }}
+            className={`asideCancelBtn`}
+          >
+            <Image
+              width="40"
+              height="40"
+              src="/images/close.svg"
+              alt="cancel"
+            ></Image>
+          </button>
+          {/* Container for aside menue */}
+          <div className="asideNavContainer">
+            {navItemsArray.map((items, index) => {
+              return (
+                <div key={index} className="asideNavItems">
+                  <a>
+                    <button>{items.name}</button>
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </aside>
+      <nav className="landingPageNavbar">
+        {/* Hamburger menu and logo code */}
         <div>
+          <button
+            onClick={() => {
+              setAside(!aside);
+            }}
+            className="navHamburger"
+          >
+            <Image
+              width="30"
+              height="30"
+              src="/images/hamburger.svg"
+              alt="Logo"
+            ></Image>
+          </button>
           <a>
-            <picture className="iconContainer">
+            <picture className="navLogo">
               <Image
-                width="50"
-                height="50"
-                src="/black-instagram-icon.svg"
-                alt="Logo"
+                width="40"
+                height="40"
+                src="/images/dummyLogo.svg"
+                alt="menu"
               ></Image>
             </picture>
           </a>
         </div>
-        <a>Home</a>
-        <a>News</a>
-        <a>FAQ</a>
-        <a>About</a>
-        <form onSubmit={handleSearchSubmit} className="">
+        {/* Navigation */}
+        <div className="headerNav">
+          {navItemsArray.map((items, index) => {
+            return <a key={index}>{items.name}</a>;
+          })}
+        </div>
+        <form
+          action="/api/form"
+          onSubmit={handleSearchInputSubmit}
+          method="post"
+        >
           <input
-            onChange={setSearchInput(e.targetValue())}
+            value={searchInput}
+            onChange={handleSearchInputChange}
             type="text"
             placeholder="Search"
             className="input"
           />
-          <button className="btn">Search</button>
+          <button type="submit" className="saerchFormButton">
+            <small className="">Search</small>
+          </button>
         </form>
       </nav>
     </header>

@@ -9,7 +9,7 @@ function LandingPageMain(props) {
       <section className="ctaLeft">
         <h1>
           Quality Doctors
-          <span className="text-secondary">For your best care</span>
+          <span className="text-secondary">For the best care</span>
         </h1>
 
         <p className="text-tetiary">
